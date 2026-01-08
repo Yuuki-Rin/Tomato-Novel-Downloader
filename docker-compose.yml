@@ -1,0 +1,15 @@
+services:
+  TomatoNovel:
+    build: .
+    image: fanqie-tomatonovel:latest
+    container_name: TomatoNovel
+    hostname: TomatoNovel
+    environment:
+      - TOMATO_WEB_PASSWORD=你的密码
+    ports:
+      - '18423:18423'
+    restart: always
+    network_mode: bridge
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
